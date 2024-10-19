@@ -1,7 +1,9 @@
 import { useOAuth } from "@clerk/clerk-expo";
 import * as WebBrowser from "expo-web-browser";
-import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import LottieView from "lottie-react-native";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import * as Animatable from "react-native-animatable";
 import ContainerDefaultComponent from "../../components/containerDefault";
 import { useWarmUpBrowser } from "../../hooks/useWarmUpBrowser";
 import { styles } from "./styles";
@@ -11,9 +13,21 @@ WebBrowser.maybeCompleteAuthSession();
 export default function SignInScreen() {
   useWarmUpBrowser();
 
+  const [showButton, setShowButton] = useState(false);
+  const animationRef = useRef(null);
+
+  // Inicia a lógica para mostrar o botão após 4 segundos
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowButton(true); // Exibe o botão após 4 segundos
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
 
-  const onPress = React.useCallback(async () => {
+  const onPress = useCallback(async () => {
     try {
       const { createdSessionId, signIn, signUp, setActive } =
         await startOAuthFlow();
@@ -31,19 +45,36 @@ export default function SignInScreen() {
 
   return (
     <ContainerDefaultComponent>
-      <Text>Sign In</Text>
-      <TouchableOpacity onPress={onPress} style={styles.button}>
-        <Text
-          style={{
-            fontSize: 17,
-            color: "#000",
-            textAlign: "center",
-            fontWeight: "bold",
-          }}
-        >
-          Vamos começar
-        </Text>
-      </TouchableOpacity>
+      <View style={styles.containerTitle}>
+        <Text style={styles.title}>Ta na</Text>
+        <Text style={styles.subTitle}>Mão</Text>
+      </View>
+      <View style={styles.containerCentral}>
+        {!showButton ? (
+          <Animatable.View
+            animation={showButton ? "fadeOut" : undefined} // Executa o fade-out da animação Lottie
+            duration={1000}
+          >
+            <LottieView
+              ref={animationRef}
+              style={styles.splash}
+              source={require("../../assets/lottie/handshake-animation-splash.json")}
+              autoPlay
+              loop={false}
+            />
+          </Animatable.View>
+        ) : (
+          <Animatable.View animation="fadeIn" duration={1000}>
+            <TouchableOpacity onPress={onPress} style={styles.button}>
+              <Image
+                source={require("../../assets/images/g-google.png")}
+                style={styles.buttonImage}
+              />
+              <Text style={styles.buttonText}>Continue com Google</Text>
+            </TouchableOpacity>
+          </Animatable.View>
+        )}
+      </View>
     </ContainerDefaultComponent>
   );
 }

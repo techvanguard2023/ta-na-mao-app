@@ -3,16 +3,15 @@ import Colors from "../../Utils/Colors";
 
 export const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    paddingTop: 20,
   },
   userContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     fontFamily: "outfit-bold",
     color: Colors.BLACK,
   },
@@ -39,7 +38,6 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     gap: 10,
     marginBottom: 40,
-    paddingLeft: 20,
   },
   itensName: {
     fontSize: 20,

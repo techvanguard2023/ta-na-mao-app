@@ -9,7 +9,6 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import * as SecureStore from "expo-secure-store";
-import { StyleSheet, View } from "react-native";
 import "./gesture-handler";
 import TabNavigation from "./src/navigation/TabNavigation";
 import { SignInScreen } from "./src/screens";
@@ -49,27 +48,17 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <ClerkProvider
         tokenCache={tokenCache}
-        publishableKey="pk_test_ZmVhc2libGUtbXVza294LTI3LmNsZXJrLmFjY291bnRzLmRldiQ"
+        publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}
       >
-        <View style={styles.container}>
-          <SignedIn>
-            <NavigationContainer>
-              <TabNavigation />
-            </NavigationContainer>
-          </SignedIn>
-          <SignedOut>
-            <SignInScreen />
-          </SignedOut>
-        </View>
+        <SignedIn>
+          <NavigationContainer>
+            <TabNavigation />
+          </NavigationContainer>
+        </SignedIn>
+        <SignedOut>
+          <SignInScreen />
+        </SignedOut>
       </ClerkProvider>
     </QueryClientProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: 30,
-  },
-});

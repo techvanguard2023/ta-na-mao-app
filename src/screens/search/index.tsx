@@ -1,10 +1,10 @@
-import { Text } from "react-native";
 import ContainerDefaultInternoComponent from "../../components/containerDefaultInterno";
+import HeaderComponent from "../../components/header";
 
 export default function SearchScreen() {
   return (
     <ContainerDefaultInternoComponent>
-      <Text>Search</Text>
+      <HeaderComponent title="Pesquisar" />
     </ContainerDefaultInternoComponent>
   );
 }

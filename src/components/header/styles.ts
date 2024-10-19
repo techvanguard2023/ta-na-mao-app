@@ -3,8 +3,11 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
-    height: "100%",
-    padding: 20,
+    backgroundColor: "#fff",
+    alignItems: "flex-start",
+    marginTop: 20,
+  },
+  title: {
+    fontSize: 20,
   },
 });
