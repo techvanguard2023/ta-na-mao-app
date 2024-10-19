@@ -1,10 +1,10 @@
 import { Text } from "react-native";
 import ContainerDefaultInternoComponent from "../../components/containerDefaultInterno";
 
-export default function HomeScreen() {
+export default function SearchScreen() {
   return (
     <ContainerDefaultInternoComponent>
-      <Text>Home</Text>
+      <Text>Search</Text>
     </ContainerDefaultInternoComponent>
   );
 }
