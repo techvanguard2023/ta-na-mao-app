@@ -5,9 +5,9 @@ export const styles = StyleSheet.create({
     marginRight: 10,
   },
   sliderImage: {
-    width: 270,
+    width: 330,
     height: 150,
     objectFit: "contain",
-    borderRadius: 25,
+    borderRadius: 10,
   },
 });

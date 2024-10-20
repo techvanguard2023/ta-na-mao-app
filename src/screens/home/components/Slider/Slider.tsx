@@ -9,8 +9,6 @@ export default function Slider() {
   const { data } = useSlider();
   const sliders = useSlider();
 
-  console.log(sliders);
-
   return (
     <View>
       <Heading text={"Principais Promoções"} isLoading={sliders.isLoading} />

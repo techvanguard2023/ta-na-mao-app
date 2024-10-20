@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import GlobalApi from "../../../../../Utils/GlobalApi";
 
-export function useSlider() {
+export function useCategories() {
   return useQuery({
-    queryKey: ["slides"],
+    queryKey: ["categories"],
     queryFn: async () => {
-      const bannersResponse = await GlobalApi.getBanner();
+      const categoriesResponse = await GlobalApi.getCategories();
       //console.log(bannersResponse);
       // @ts-ignore
-      return bannersResponse?.banners;
+      return categoriesResponse?.categories;
     },
     refetchOnWindowFocus: true,
   });
