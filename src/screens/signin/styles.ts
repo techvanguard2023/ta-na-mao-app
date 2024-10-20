@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 17,
-    color: Colors.BLACK,
+    color: Colors.GRAY,
     textAlign: "center",
     fontWeight: "bold",
   },
@@ -27,15 +27,17 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 44,
-    fontFamily: "BalsamiqSans_700Bold",
+    fontFamily: "LibreBaskerville_700Bold",
     alignSelf: "flex-start",
     marginLeft: 65,
+    color: Colors.WHITE,
   },
   subTitle: {
     fontSize: 44,
-    fontFamily: "BalsamiqSans_700Bold",
+    fontFamily: "LibreBaskerville_700Bold",
     alignSelf: "flex-end",
     marginRight: 65,
+    color: Colors.WHITE,
   },
   containerCentral: {
     width: "100%",

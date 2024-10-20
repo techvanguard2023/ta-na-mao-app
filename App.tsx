@@ -1,11 +1,10 @@
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import {
-  BalsamiqSans_400Regular,
-  BalsamiqSans_400Regular_Italic,
-  BalsamiqSans_700Bold,
-  BalsamiqSans_700Bold_Italic,
+  LibreBaskerville_400Regular,
+  LibreBaskerville_400Regular_Italic,
+  LibreBaskerville_700Bold,
   useFonts,
-} from "@expo-google-fonts/balsamiq-sans";
+} from "@expo-google-fonts/libre-baskerville";
 import { NavigationContainer } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import * as SecureStore from "expo-secure-store";
@@ -34,10 +33,9 @@ const tokenCache = {
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    BalsamiqSans_400Regular,
-    BalsamiqSans_400Regular_Italic,
-    BalsamiqSans_700Bold,
-    BalsamiqSans_700Bold_Italic,
+    LibreBaskerville_400Regular,
+    LibreBaskerville_400Regular_Italic,
+    LibreBaskerville_700Bold,
   });
 
   if (!fontsLoaded) {

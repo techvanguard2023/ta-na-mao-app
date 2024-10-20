@@ -1,14 +1,15 @@
 import React from "react";
-import { FlatList, Image, useWindowDimensions, View } from "react-native";
+import { FlatList, Image, View } from "react-native";
 import Heading from "../../../../components/Heading/Heading";
 import SkeletonSlider from "./components/skeletonSlider";
 import { useSlider } from "./hooks/userSlider";
 import { styles } from "./styles";
 
 export default function Slider() {
-  const { width, height } = useWindowDimensions();
   const { data } = useSlider();
   const sliders = useSlider();
+
+  console.log(sliders);
 
   return (
     <View>

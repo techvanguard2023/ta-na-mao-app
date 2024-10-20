@@ -1,11 +1,12 @@
 import { gql, request } from "graphql-request";
 const MASTER_URL = process.env.EXPO_PUBLIC_HYGRAPH_API;
 
-const getSlider = async () => {
+const getBanner = async () => {
   const query = gql`
-    query GetSlider {
-      sliders {
+    query GetBanner {
+      banners {
         id
+        isActive
         name
         image {
           url
@@ -14,9 +15,10 @@ const getSlider = async () => {
     }
   `;
   const result = await request(MASTER_URL, query);
+  console.log(result);
   return result;
 };
 
 export default {
-  getSlider,
+  getBanner,
 };
