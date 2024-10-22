@@ -56,4 +56,26 @@ export const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
   },
+  containerNotification: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    backgroundColor: Colors.GRAY,
+    padding: 5,
+    borderRadius: 99,
+  },
+  notification: {
+    width: 10,
+    height: 10,
+    backgroundColor: "red",
+    borderRadius: 99,
+    position: "absolute",
+    right: 0,
+    bottom: 0,
+  },
+  notificationText: {
+    color: Colors.WHITE,
+    fontSize: 8,
+    textAlign: "center",
+  },
 });

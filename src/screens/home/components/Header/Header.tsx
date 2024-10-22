@@ -1,5 +1,6 @@
 import { useUser } from "@clerk/clerk-expo";
-import { Feather, FontAwesome } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
@@ -10,6 +11,7 @@ import { styles } from "./styles";
 export default function Header() {
   const { user, isLoading } = useUser();
   const navigation = useNavigation();
+  const [hasNotification, setHasNotification] = React.useState(true);
 
   return (
     <View style={styles.container}>
@@ -31,13 +33,38 @@ export default function Header() {
               </>
             )}
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("ProfileScreen");
-            }}
-          >
-            <Feather name="settings" size={27} color={Colors.WHITE} />
-          </TouchableOpacity>
+          <View style={styles.containerNotification}>
+            <>
+              <View style={styles.notification}>
+                <Text style={styles.notificationText}>1</Text>
+              </View>
+              {hasNotification ? (
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("ProfileScreen");
+                  }}
+                >
+                  <MaterialIcons
+                    name="notifications-active"
+                    size={27}
+                    color={Colors.WHITE}
+                  />
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("ProfileScreen");
+                  }}
+                >
+                  <MaterialIcons
+                    name="notifications"
+                    size={27}
+                    color={Colors.WHITE}
+                  />
+                </TouchableOpacity>
+              )}
+            </>
+          </View>
         </View>
       )}
       <View style={styles.searchBarContainer}>
