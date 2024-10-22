@@ -3,8 +3,8 @@ import Colors from "../../../../Utils/Colors";
 
 export const styles = StyleSheet.create({
   icon: {
-    width: 70,
-    height: 70,
+    width: 60,
+    height: 60,
     borderRadius: 50,
     backgroundColor: Colors.LIGHT_GRAY,
     objectFit: "contain",

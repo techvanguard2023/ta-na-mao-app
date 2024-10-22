@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import GlobalApi from "../../../../../Utils/GlobalApi";
 
-export function useCategories() {
+export function usePartnerList() {
   return useQuery({
-    queryKey: ["categories"],
+    queryKey: ["partners-list"],
     queryFn: async () => {
-      const categoriesResponse = await GlobalApi.getCategories();
+      const partnerListResponse = await GlobalApi.getPartnersList();
       //console.log(bannersResponse);
       // @ts-ignore
-      return categoriesResponse?.categories;
+      return partnerListResponse?.partners;
     },
     refetchInterval: 10000,
   });

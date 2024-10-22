@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   sliderImage: {
     width: 330,
     height: 150,
-    objectFit: "contain",
+    objectFit: "cover",
     borderRadius: 10,
   },
 });

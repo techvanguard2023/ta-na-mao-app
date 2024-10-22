@@ -20,7 +20,7 @@ export default function Categories() {
   console.log(data);
 
   return (
-    <View>
+    <View style={{ marginTop: 20, marginBottom: 20 }}>
       <Heading
         text={"Categorias"}
         isViewAll

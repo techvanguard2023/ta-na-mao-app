@@ -4,6 +4,7 @@ import HorizontalLine from "../../components/HorizontalLine/HorizontalLine";
 import Colors from "../../Utils/Colors";
 import Categories from "./components/Categories/Categories";
 import Header from "./components/Header/Header";
+import PartnerList from "./components/PartnerList/PartnerList";
 import Slider from "./components/Slider/Slider";
 
 export default function HomeScreen() {
@@ -12,8 +13,9 @@ export default function HomeScreen() {
       <Header />
       <ContainerDefaultInternoComponent>
         <Slider />
-        <HorizontalLine />
         <Categories />
+        <HorizontalLine />
+        <PartnerList />
       </ContainerDefaultInternoComponent>
     </ScrollView>
   );

@@ -10,6 +10,6 @@ export function useSlider() {
       // @ts-ignore
       return bannersResponse?.banners;
     },
-    refetchOnWindowFocus: true,
+    refetchInterval: 10000,
   });
 }

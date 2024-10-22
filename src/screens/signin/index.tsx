@@ -52,7 +52,7 @@ export default function SignInScreen() {
       <View style={styles.containerCentral}>
         {!showButton ? (
           <Animatable.View
-            animation={showButton ? "fadeOut" : undefined} // Executa o fade-out da animação Lottie
+            animation={showButton ? "fadeOut" : undefined}
             duration={1000}
           >
             <LottieView
