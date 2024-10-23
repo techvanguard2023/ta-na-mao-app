@@ -1,10 +1,10 @@
 import ContainerDefaultInternoComponent from "../../components/containerDefaultInterno";
 import HeaderComponent from "../../components/header";
 
-export default function SearchScreen() {
+export default function FavoriteScreen() {
   return (
     <ContainerDefaultInternoComponent>
-      <HeaderComponent title="Pesquisar" />
+      <HeaderComponent title="Favoritos" />
     </ContainerDefaultInternoComponent>
   );
 }

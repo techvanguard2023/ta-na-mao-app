@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: Colors.LIGHT_GRAY,
     borderRadius: 10,
-    height: 240,
+    height: 270,
   },
   infoContainer: {
     padding: 7,
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
   },
   name: {
-    fontSize: 17,
+    fontSize: 16,
     fontFamily: "outfit-medium",
   },
   price: {
@@ -32,5 +32,22 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  containerLocation: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 5,
+  },
+  containerRate: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 5,
+  },
+  location: {
+    fontSize: 12,
+    fontFamily: "outfit",
   },
 });

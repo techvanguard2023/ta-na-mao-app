@@ -1,6 +1,7 @@
+import SearchScreen from "./favorite";
 import HomeScreen from "./home";
+import PartnerScreen from "./partner";
 import ProfileScreen from "./profile";
-import SearchScreen from "./search";
 import SignInScreen from "./signin";
 
-export { HomeScreen, ProfileScreen, SearchScreen, SignInScreen };
+export { HomeScreen, PartnerScreen, ProfileScreen, SearchScreen, SignInScreen };

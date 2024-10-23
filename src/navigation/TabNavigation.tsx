@@ -1,7 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import { Text } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { ProfileScreen, SearchScreen } from "../screens";
 import Colors from "../Utils/Colors";
 import HomeNavigation from "./HomeNavigation";
@@ -20,60 +20,27 @@ export default function TabNavigation() {
         name="Home"
         component={HomeNavigation}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text
-              style={{
-                color: color,
-                fontSize: 12,
-                marginTop: -7,
-                fontFamily: "outfit",
-              }}
-            >
-              Home
-            </Text>
-          ),
+          tabBarLabel: () => <Text style={styles.tabBarLabel}>Home</Text>,
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="home" size={size} color={color} />
           ),
         }}
       />
       <Tab.Screen
-        name="AutoService"
+        name="favorite"
         component={SearchScreen}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text
-              style={{
-                color: color,
-                fontSize: 12,
-                marginTop: -7,
-                fontFamily: "outfit",
-              }}
-            >
-              Pesquisar
-            </Text>
-          ),
+          tabBarLabel: () => <Text style={styles.tabBarLabel}>Favoritos</Text>,
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="search" size={size} color={color} />
+            <FontAwesome name="heart" size={size} color={color} />
           ),
         }}
       />
       <Tab.Screen
-        name="Wishlist"
+        name="profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: ({ color }) => (
-            <Text
-              style={{
-                color: color,
-                fontSize: 12,
-                marginTop: -7,
-                fontFamily: "outfit",
-              }}
-            >
-              Perfil
-            </Text>
-          ),
+          tabBarLabel: () => <Text style={styles.tabBarLabel}>Perfil</Text>,
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="user" size={size} color={color} />
           ),
@@ -82,3 +49,12 @@ export default function TabNavigation() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBarLabel: {
+    color: Colors.PRIMARY,
+    fontSize: 12,
+    marginTop: -7,
+    fontFamily: "outfit",
+  },
+});

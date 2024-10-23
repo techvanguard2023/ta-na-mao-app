@@ -56,8 +56,34 @@ const getPartnersList = async () => {
   return result;
 };
 
+const getPartnerById = async (id: string) => {
+  const query = gql`
+    query getPartnerById($id: ID!) {
+      partner(where: { id: $id }) {
+        id
+        name
+        rate
+        createdAt
+        location
+        isActive
+        image {
+          url
+        }
+        category {
+          name
+        }
+        description
+        contact
+      }
+    }
+  `;
+  const result = await request(MASTER_URL, query, { id });
+  return result;
+};
+
 export default {
   getBanner,
   getCategories,
   getPartnersList,
+  getPartnerById,
 };

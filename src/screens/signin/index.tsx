@@ -1,6 +1,5 @@
 import { useOAuth } from "@clerk/clerk-expo";
 import * as WebBrowser from "expo-web-browser";
-import LottieView from "lottie-react-native";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import * as Animatable from "react-native-animatable";
@@ -55,13 +54,13 @@ export default function SignInScreen() {
             animation={showButton ? "fadeOut" : undefined}
             duration={1000}
           >
-            <LottieView
+            {/* <LottieView
               ref={animationRef}
               style={styles.splash}
               source={require("../../assets/lottie/handshake-animation-splash.json")}
               autoPlay
               loop={false}
-            />
+            /> */}
           </Animatable.View>
         ) : (
           <Animatable.View animation="fadeIn" duration={1000}>

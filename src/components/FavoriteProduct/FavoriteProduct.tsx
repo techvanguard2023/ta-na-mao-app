@@ -1,22 +1,27 @@
-import {View, Text, TouchableOpacity} from "react-native";
-import React, {useState} from "react";
-import {MaterialIcons} from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { TouchableOpacity } from "react-native";
 import Colors from "../../Utils/Colors";
-import {styles} from "./styles";
+import { styles } from "./styles";
 
-export default function FavoriteProduct({productId}): any {
-    const [favorited, setFavorited] = useState(false)
+export default function FavoritePartner({ partnerId }): any {
+  const [favorited, setFavorited] = useState(false);
 
-    function favoriteProduct() {
-        setFavorited(!favorited)
-        console.log(productId)
-    }
+  function favoritePartner() {
+    setFavorited(!favorited);
+    console.log(partnerId);
+  }
 
-    return (
-        <>
-            <TouchableOpacity onPress={() => favoriteProduct()}>
-                <MaterialIcons name={favorited ? 'favorite-border' : 'favorite'} size={24} color={Colors.PRIMARY} style={styles.favoriteIcon}/>
-            </TouchableOpacity>
-        </>
-    )
+  return (
+    <>
+      <TouchableOpacity onPress={() => favoritePartner()}>
+        <MaterialIcons
+          name={favorited ? "favorite-border" : "favorite"}
+          size={24}
+          color={Colors.PRIMARY}
+          style={styles.favoriteIcon}
+        />
+      </TouchableOpacity>
+    </>
+  );
 }
