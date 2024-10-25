@@ -9,7 +9,6 @@ export default function FavoritePartner({ partnerId }): any {
 
   function favoritePartner() {
     setFavorited(!favorited);
-    console.log(partnerId);
   }
 
   return (

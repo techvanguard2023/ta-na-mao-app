@@ -17,8 +17,6 @@ export default function Categories() {
   const navigation = useNavigation();
   const { data, isLoading } = useCategories();
 
-  console.log(data);
-
   return (
     <View style={{ marginTop: 20, marginBottom: 20 }}>
       <Heading

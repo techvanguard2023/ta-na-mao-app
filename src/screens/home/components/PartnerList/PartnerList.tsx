@@ -7,8 +7,6 @@ import PartnerListItemSmall from "./PartnerListItemSmall";
 export default function PartnerList() {
   const { data, isLoading } = usePartnerList();
 
-  console.log(data);
-
   return (
     <View style={{ marginTop: 10 }}>
       <Heading text={"Mais Procurados"} isLoading={isLoading} />

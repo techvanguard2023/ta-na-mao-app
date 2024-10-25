@@ -1,7 +1,9 @@
 import Entypo from "@expo/vector-icons/Entypo";
-import { Image, ScrollView, Text, View } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import CategoryBadge from "../../components/CategoryBadge/CategoryBadge";
+import FavoritePartner from "../../components/FavoriteProduct/FavoriteProduct";
+import HorizontalLine from "../../components/HorizontalLine/HorizontalLine";
+import Rate from "../../components/Rate";
 import { useGetPartnerById } from "./hooks/usePartnerById";
 import { styles } from "./styles";
 
@@ -11,21 +13,32 @@ export default function PartnerScreen({ route }: any) {
   const { data, isLoading } = useGetPartnerById(partnerId);
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <View style={styles.containerImageProfile}>
         <Image style={styles.image} source={{ uri: data?.image?.url }} />
       </View>
       <View style={styles.containerInfo}>
-        <Text style={styles.partnerName}>{data?.name}</Text>
+        <View style={styles.containerNameAndFavirite}>
+          <Text style={styles.partnerName}>{data?.name}</Text>
+          <FavoritePartner partnerId={data?.id} />
+        </View>
+
+        <Rate rateValue={data?.rate} />
+
         <Text style={styles.partnerPhone}>{data?.contact}</Text>
         <View style={styles.containerLocation}>
-          <Entypo name="location-pin" size={16} color={Colors.PRIMARY} />
+          <Entypo name="location-pin" size={16} color="#4169E1" />
           <Text style={styles.partnerLocation}>{data?.location}</Text>
         </View>
         <CategoryBadge categoryName={data?.category?.name} />
-        <Text>{data?.isActive}</Text>
-        <Text>{data?.createdAt}</Text>
-        <Text>{data?.description}</Text>
+        <HorizontalLine />
+        <View style={styles.sessionDetails}>
+          <Text style={styles.sessionDetailsTitle}>Sobre o profissional</Text>
+          <Text style={styles.sessionDetailsText}>{data?.description}</Text>
+        </View>
+        <TouchableOpacity style={styles.buttom}>
+          <Text style={styles.buttomText}>Solicitar orçamento</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );

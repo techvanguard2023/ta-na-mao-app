@@ -1,5 +1,5 @@
 import { gql, request } from "graphql-request";
-const MASTER_URL = process.env.EXPO_PUBLIC_HYGRAPH_API;
+const MASTER_URL: any = process.env.EXPO_PUBLIC_HYGRAPH_API;
 
 const getBanner = async () => {
   const query = gql`
@@ -81,9 +81,44 @@ const getPartnerById = async (id: string) => {
   return result;
 };
 
+const getCustomer = async (customerId: string) => {
+  console.log("customerId", customerId);
+  const query = gql`
+    query getCustomer {
+      customers(where: { customerId: $customerId }, stage: DRAFT) {
+        id
+        fullName
+        email
+        customerId
+        createdBy {
+          createdAt
+        }
+      }
+    }
+  `;
+  const result = await request(MASTER_URL, query, { customerId });
+  return result;
+};
+
+const postCustomer = async (data: any) => {
+  const mutation = gql`
+    mutation createCustomer($data: CustomerCreateInput!) {
+      createCustomer(data: $data) {
+        fullName
+        email
+        customerId
+      }
+    }
+  `;
+  const result = await request(MASTER_URL, mutation, { data });
+  return result;
+};
+
 export default {
   getBanner,
   getCategories,
   getPartnersList,
   getPartnerById,
+  getCustomer,
+  postCustomer,
 };

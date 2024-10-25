@@ -6,7 +6,6 @@ export function usePartnerList() {
     queryKey: ["partners-list"],
     queryFn: async () => {
       const partnerListResponse = await GlobalApi.getPartnersList();
-      //console.log(bannersResponse);
       // @ts-ignore
       return partnerListResponse?.partners;
     },

@@ -6,7 +6,6 @@ export function useSlider() {
     queryKey: ["slides"],
     queryFn: async () => {
       const bannersResponse = await GlobalApi.getBanner();
-      //console.log(bannersResponse);
       // @ts-ignore
       return bannersResponse?.banners;
     },
