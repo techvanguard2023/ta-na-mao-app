@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import CategoryBadge from "../../../../components/CategoryBadge/CategoryBadge";
-import FavoritePartner from "../../../../components/FavoriteProduct/FavoriteProduct";
+import FavoritePartner from "../../../../components/FavoritePartner/FavoritePartner";
 import Rate from "../../../../components/Rate";
 import Colors from "../../../../Utils/Colors";
 import SkeletonPartnerList from "./components/skeletonPartnerList";
@@ -11,6 +11,7 @@ import { styles } from "./styles";
 
 export default function PartnerListItemSmall({ partner, isLoading }): any {
   const navigation = useNavigation();
+  console.log("CategoryScreen", partner);
   return (
     <TouchableOpacity
       style={styles.container}

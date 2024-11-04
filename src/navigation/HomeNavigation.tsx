@@ -1,6 +1,11 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { HomeScreen, PartnerScreen } from "../screens";
+import {
+  CategoryScreen,
+  HomeScreen,
+  NotificationScreen,
+  PartnerScreen,
+} from "../screens";
 import SearchScreen from "../screens/favorite";
 import ProfileScreen from "../screens/profile";
 
@@ -18,6 +23,11 @@ export default function HomeNavigation() {
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="SearchScreen" component={SearchScreen} />
         <Stack.Screen name="PartnerScreen" component={PartnerScreen} />
+        <Stack.Screen
+          name="NotificationScreen"
+          component={NotificationScreen}
+        />
+        <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
       </Stack.Navigator>
     </SafeAreaProvider>
   );

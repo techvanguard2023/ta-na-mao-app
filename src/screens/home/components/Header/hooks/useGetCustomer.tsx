@@ -5,9 +5,13 @@ export function useGetCustomer(customerId: string) {
   return useQuery({
     queryKey: ["customer-id", customerId],
     queryFn: async () => {
-      const customerResponse = await GlobalApi.getCustomer(customerId);
-      // @ts-ignore
-      return customerResponse?.customers;
+      try {
+        const customerResponse = await GlobalApi.getCustomer(customerId);
+        return customerResponse?.customers;
+      } catch (error) {
+        console.error("Erro ao buscar cliente:", error);
+        return undefined;
+      }
     },
   });
 }

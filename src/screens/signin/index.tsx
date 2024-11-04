@@ -1,7 +1,9 @@
 import { useOAuth } from "@clerk/clerk-expo";
 import * as WebBrowser from "expo-web-browser";
+import LottieView from "lottie-react-native";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import * as Animatable from "react-native-animatable";
 import ContainerDefaultComponent from "../../components/containerDefault";
 import { useWarmUpBrowser } from "../../hooks/useWarmUpBrowser";
 import { styles } from "./styles";
@@ -46,14 +48,8 @@ export default function SignInScreen() {
         <Text style={styles.title}>Ta na</Text>
         <Text style={styles.subTitle}>Mão</Text>
       </View>
-      <TouchableOpacity onPress={onPress} style={styles.button}>
-        <Image
-          source={require("../../assets/images/g-google.png")}
-          style={styles.buttonImage}
-        />
-        <Text style={styles.buttonText}>Continue com Google</Text>
-      </TouchableOpacity>
-      {/* <View style={styles.containerCentral}>
+
+      <View style={styles.containerCentral}>
         {!showButton ? (
           <Animatable.View
             animation={showButton ? "fadeOut" : undefined}
@@ -78,7 +74,7 @@ export default function SignInScreen() {
             </TouchableOpacity>
           </Animatable.View>
         )}
-      </View> */}
+      </View>
     </ContainerDefaultComponent>
   );
 }

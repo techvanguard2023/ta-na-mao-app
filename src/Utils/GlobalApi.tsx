@@ -82,9 +82,8 @@ const getPartnerById = async (id: string) => {
 };
 
 const getCustomer = async (customerId: string) => {
-  console.log("customerId", customerId);
   const query = gql`
-    query getCustomer {
+    query getCustomer($customerId: String!) {
       customers(where: { customerId: $customerId }, stage: DRAFT) {
         id
         fullName
@@ -93,6 +92,19 @@ const getCustomer = async (customerId: string) => {
         createdBy {
           createdAt
         }
+      }
+    }
+  `;
+  const result = await request(MASTER_URL, query, { customerId });
+  return result;
+};
+
+const getFavoritesByCustomerId = async (customerId: string) => {
+  const query = gql`
+    query getFavoritesByCustomerId($customerId: String!) {
+      favorites(where: { customerId: $customerId }, stage: DRAFT) {
+        partnerId
+        customerId
       }
     }
   `;
@@ -114,6 +126,45 @@ const postCustomer = async (data: any) => {
   return result;
 };
 
+const postFavorite = async (data: any) => {
+  const mutation = gql`
+    mutation createFavorite($data: FavoriteCreateInput!) {
+      createFavorite(data: $data) {
+        customerId
+        partnerId
+      }
+    }
+  `;
+  const result = await request(MASTER_URL, mutation, { data });
+  return result;
+};
+
+const getCategoryById = async (categoryId: string) => {
+  const query = gql`
+    query getCategoryById($categoryId: ID!) {
+      category(where: { id: $categoryId }) {
+        id
+        name
+        partner {
+          id
+          name
+          rate
+          location
+          isActive
+          image {
+            url
+          }
+          category {
+            name
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(MASTER_URL, query, { categoryId });
+  return result;
+};
+
 export default {
   getBanner,
   getCategories,
@@ -121,4 +172,7 @@ export default {
   getPartnerById,
   getCustomer,
   postCustomer,
+  postFavorite,
+  getFavoritesByCustomerId,
+  getCategoryById,
 };

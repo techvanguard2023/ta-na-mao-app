@@ -7,6 +7,7 @@ import { useCategories } from "./hooks/useCategories";
 import { styles } from "./styles";
 
 interface Category {
+  id: string;
   name: string;
   icon: {
     url: string;
@@ -34,8 +35,8 @@ export default function Categories() {
               key={index}
               style={styles.categoryItem}
               onPress={() =>
-                navigation.push("business-list", {
-                  category: item.name,
+                navigation.push("CategoryScreen", {
+                  category: item.id,
                 })
               }
             >

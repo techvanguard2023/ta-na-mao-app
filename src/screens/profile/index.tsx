@@ -21,6 +21,12 @@ export default function ProfileScreen() {
     },
     {
       id: 2,
+      name: "Notifications",
+      icon: "notifications",
+      screen: "NotificationScreen",
+    },
+    {
+      id: 3,
       name: "Logout",
       icon: "log-out",
     },
