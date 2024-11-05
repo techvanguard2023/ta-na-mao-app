@@ -11,7 +11,6 @@ import { styles } from "./styles";
 
 export default function PartnerListItemSmall({ partner, isLoading }): any {
   const navigation = useNavigation();
-  console.log("CategoryScreen", partner);
   return (
     <TouchableOpacity
       style={styles.container}
