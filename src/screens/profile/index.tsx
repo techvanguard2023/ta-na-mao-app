@@ -35,7 +35,6 @@ export default function ProfileScreen() {
   return (
     <ContainerDefaultInternoComponent>
       <View style={styles.container}>
-        <Text style={styles.title}>Profile</Text>
         <View style={styles.userContainer}>
           <Image source={{ uri: user?.imageUrl }} style={styles.imageUser} />
           <Text style={styles.fullNameUser}>{user?.fullName}</Text>

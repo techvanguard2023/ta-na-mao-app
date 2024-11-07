@@ -1,7 +1,5 @@
 import { useUser } from "@clerk/clerk-expo";
 import { FontAwesome } from "@expo/vector-icons";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import Colors from "../../../../Utils/Colors";
@@ -10,8 +8,6 @@ import { styles } from "./styles";
 
 export default function Header() {
   const { user, isLoaded } = useUser();
-  const navigation = useNavigation();
-  const [hasNotification] = useState(true);
   const [isLoading] = useState(false);
 
   return (
@@ -33,40 +29,6 @@ export default function Header() {
                 </View>
               </>
             )}
-          </View>
-          <View style={styles.containerNotification}>
-            <>
-              <View style={styles.notification}>
-                <Text style={styles.notificationText}>1</Text>
-              </View>
-              {hasNotification ? (
-                <TouchableOpacity
-                  onPress={() => {
-                    // @ts-ignore
-                    navigation.navigate("NotificationScreen");
-                  }}
-                >
-                  <MaterialIcons
-                    name="notifications-active"
-                    size={27}
-                    color={Colors.WHITE}
-                  />
-                </TouchableOpacity>
-              ) : (
-                <TouchableOpacity
-                  onPress={() => {
-                    // @ts-ignore
-                    navigation.navigate("NotificationScreen");
-                  }}
-                >
-                  <MaterialIcons
-                    name="notifications"
-                    size={27}
-                    color={Colors.WHITE}
-                  />
-                </TouchableOpacity>
-              )}
-            </>
           </View>
         </View>
       )}

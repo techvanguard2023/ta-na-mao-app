@@ -3,7 +3,7 @@ import Colors from "../../Utils/Colors";
 
 export const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
+    paddingTop: 30,
   },
   userContainer: {
     display: "flex",

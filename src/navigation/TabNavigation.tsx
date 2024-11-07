@@ -1,8 +1,10 @@
 import { FontAwesome } from "@expo/vector-icons";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { StyleSheet, Text } from "react-native";
-import { ProfileScreen, SearchScreen } from "../screens";
+import { ProfileScreen } from "../screens";
+import NotificationScreen from "../screens/notification";
 import Colors from "../Utils/Colors";
 import HomeNavigation from "./HomeNavigation";
 
@@ -17,7 +19,7 @@ export default function TabNavigation() {
       }}
     >
       <Tab.Screen
-        name="Home"
+        name="home"
         component={HomeNavigation}
         options={{
           tabBarLabel: () => <Text style={styles.tabBarLabel}>Home</Text>,
@@ -27,12 +29,14 @@ export default function TabNavigation() {
         }}
       />
       <Tab.Screen
-        name="favorite"
-        component={SearchScreen}
+        name="notification"
+        component={NotificationScreen}
         options={{
-          tabBarLabel: () => <Text style={styles.tabBarLabel}>Favoritos</Text>,
+          tabBarLabel: () => (
+            <Text style={styles.tabBarLabel}>Notificações</Text>
+          ),
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="heart" size={size} color={color} />
+            <Ionicons name="notifications" size={size} color={color} />
           ),
         }}
       />

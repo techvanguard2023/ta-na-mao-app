@@ -3,7 +3,6 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import CategoryBadge from "../../../../components/CategoryBadge/CategoryBadge";
-import FavoritePartner from "../../../../components/FavoritePartner/FavoritePartner";
 import Rate from "../../../../components/Rate";
 import Colors from "../../../../Utils/Colors";
 import SkeletonPartnerList from "./components/skeletonPartnerList";
@@ -37,7 +36,6 @@ export default function PartnerListItemSmall({ partner, isLoading }): any {
             </View>
             <View style={styles.containerRate}>
               <Rate rateValue={partner?.rate} />
-              <FavoritePartner partnerId={partner?.id} />
             </View>
           </View>
         </>

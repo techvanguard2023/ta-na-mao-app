@@ -1,5 +1,4 @@
 import CategoryScreen from "./category";
-import SearchScreen from "./favorite";
 import HomeScreen from "./home";
 import NotificationScreen from "./notification";
 import PartnerScreen from "./partner";
@@ -12,6 +11,5 @@ export {
   NotificationScreen,
   PartnerScreen,
   ProfileScreen,
-  SearchScreen,
   SignInScreen,
 };

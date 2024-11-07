@@ -9,7 +9,7 @@ export function useCategoryById(categoryId: string) {
         const CategoryResponse = await GlobalApi.getCategoryById(categoryId);
         return CategoryResponse?.category;
       } catch (error) {
-        console.error("Erro ao buscar favoritos:", error);
+        console.error("Erro ao buscar categorias:", error);
         return undefined;
       }
     },

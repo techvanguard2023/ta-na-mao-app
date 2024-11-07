@@ -112,6 +112,25 @@ const getFavoritesByCustomerId = async (customerId: string) => {
   return result;
 };
 
+const listFavorites = async (partnersIds: string[]) => {
+  console.log("partnersIds", partnersIds);
+  const query = gql`
+    query listFavorites($partnersIds: [String!]) {
+      partners(where: { id_in: $partnersIds }) {
+        id
+        name
+        rate
+        location
+        image {
+          url
+        }
+      }
+    }
+  `;
+  const result = await request(MASTER_URL, query, { partnersIds });
+  return result;
+};
+
 const postCustomer = async (data: any) => {
   const mutation = gql`
     mutation createCustomer($data: CustomerCreateInput!) {
@@ -165,6 +184,22 @@ const getCategoryById = async (categoryId: string) => {
   return result;
 };
 
+const getNotification = async () => {
+  const query = gql`
+    query getNotification {
+      notification {
+        id
+        title
+        date
+        message
+        userId
+      }
+    }
+  `;
+  const result = await request(MASTER_URL, query);
+  return result;
+};
+
 export default {
   getBanner,
   getCategories,
@@ -175,4 +210,6 @@ export default {
   postFavorite,
   getFavoritesByCustomerId,
   getCategoryById,
+  listFavorites,
+  getNotification,
 };

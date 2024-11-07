@@ -8,7 +8,6 @@ import {
   View,
 } from "react-native";
 import CategoryBadge from "../../components/CategoryBadge/CategoryBadge";
-import FavoritePartner from "../../components/FavoritePartner/FavoritePartner";
 import HorizontalLine from "../../components/HorizontalLine/HorizontalLine";
 import Rate from "../../components/Rate";
 import { useGetPartnerById } from "./hooks/usePartnerById";
@@ -46,7 +45,6 @@ export default function PartnerScreen({ route }: any) {
       <View style={styles.containerInfo}>
         <View style={styles.containerNameAndFavirite}>
           <Text style={styles.partnerName}>{data?.name}</Text>
-          <FavoritePartner partnerId={data?.id} />
         </View>
 
         <Rate rateValue={data?.rate} />

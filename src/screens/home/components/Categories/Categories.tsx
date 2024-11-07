@@ -22,7 +22,7 @@ export default function Categories() {
     <View style={{ marginTop: 20, marginBottom: 20 }}>
       <Heading
         text={"Categorias"}
-        isViewAll
+        isViewAll={false}
         viewAllLink={"category-list"}
         isLoading={isLoading}
       />
