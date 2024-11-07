@@ -11,7 +11,8 @@ export const styles = StyleSheet.create({
     minHeight: 80,
     borderRadius: 10,
     padding: 10,
-    marginBottom: 10,
+    marginBottom: 5,
+    marginTop: 10,
   },
   containerHeader: {
     flexDirection: "row",
