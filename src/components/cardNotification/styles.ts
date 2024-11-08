@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
   },
   title: {
     color: Colors.BLACK,
-    fontWeight: "bold",
   },
   date: {
     color: Colors.GRAY,

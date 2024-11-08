@@ -17,7 +17,6 @@ export const styles = StyleSheet.create({
     fontSize: 17,
     color: Colors.GRAY,
     textAlign: "center",
-    fontWeight: "bold",
   },
   containerTitle: {
     flexDirection: "column",

@@ -36,7 +36,6 @@ export const styles = StyleSheet.create({
   },
   partnerName: {
     fontSize: 25,
-    fontWeight: "bold",
   },
   partnerPhone: {
     fontSize: 16,
@@ -59,7 +58,6 @@ export const styles = StyleSheet.create({
   sessionDetailsTitle: {
     fontSize: 16,
     color: Colors.BLACK,
-    fontWeight: "bold",
   },
   sessionDetailsText: {
     fontSize: 16,
@@ -76,6 +74,5 @@ export const styles = StyleSheet.create({
   buttomText: {
     fontSize: 16,
     color: Colors.WHITE,
-    fontWeight: "bold",
   },
 });

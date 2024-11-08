@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
   categoryName: {
     fontSize: 14,
     textAlign: "center",
-    fontWeight: 600,
   },
   categoryContainer: {
     flexDirection: "row",
