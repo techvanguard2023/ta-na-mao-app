@@ -59,6 +59,5 @@ const styles = StyleSheet.create({
     color: Colors.PRIMARY,
     fontSize: 12,
     marginTop: -7,
-    fontFamily: "outfit",
   },
 });

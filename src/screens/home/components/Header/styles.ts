@@ -23,12 +23,10 @@ export const styles = StyleSheet.create({
   },
   greeting: {
     color: Colors.WHITE,
-    fontFamily: "outfit",
   },
   userName: {
     color: Colors.WHITE,
     fontSize: 20,
-    fontFamily: "outfit-medium",
   },
   userImage: {
     width: 45,
@@ -42,7 +40,6 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     width: "85%",
     fontSize: 16,
-    fontFamily: "outfit",
   },
   searchBarContainer: {
     marginTop: 15,

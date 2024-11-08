@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
-    fontFamily: "outfit-bold",
     color: Colors.BLACK,
   },
   imageUser: {
@@ -22,13 +21,11 @@ export const styles = StyleSheet.create({
   },
   fullNameUser: {
     fontSize: 26,
-    fontFamily: "outfit-medium",
     color: Colors.BLACK,
     marginTop: 8,
   },
   email: {
     fontSize: 16,
-    fontFamily: "outfit",
     color: Colors.BLACK,
     marginTop: 3,
   },
@@ -41,6 +38,5 @@ export const styles = StyleSheet.create({
   },
   itensName: {
     fontSize: 20,
-    fontFamily: "outfit",
   },
 });

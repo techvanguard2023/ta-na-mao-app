@@ -15,7 +15,6 @@ export default function HomeScreen() {
   const { user } = useUser();
 
   const customerId: any = user?.id;
-  console.log("customerId", customerId);
   const { data, isLoading } = useGetCustomer(customerId);
   const { mutateAsync: saveCustomer } = useCustomer();
 

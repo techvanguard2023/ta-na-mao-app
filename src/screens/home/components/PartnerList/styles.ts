@@ -22,11 +22,9 @@ export const styles = StyleSheet.create({
   },
   name: {
     fontSize: 16,
-    fontFamily: "outfit-medium",
   },
   price: {
     fontSize: 13,
-    fontFamily: "outfit",
   },
   subContainer: {
     display: "flex",
@@ -49,6 +47,5 @@ export const styles = StyleSheet.create({
   },
   location: {
     fontSize: 12,
-    fontFamily: "outfit",
   },
 });
